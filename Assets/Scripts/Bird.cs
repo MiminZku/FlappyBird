@@ -7,6 +7,8 @@ using UnityEngine.Android;
 public class Bird : MonoBehaviour
 {
     public float flyPower;
+    public bool isDead = false;
+    public ObstacleGenerator og;
 
     Rigidbody2D birdRb;
     // Start is called before the first frame update
@@ -18,23 +20,25 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, birdRb.velocity.y*5f);
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, birdRb.velocity.y*3f);
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !og.isPaused)
         {
-            GetComponent<Animator>().SetTrigger("Fly");
-            birdRb.AddForce(transform.up * flyPower, ForceMode2D.Impulse);
+            Fly();
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.DownArrow) && !og.isPaused)
         {
-            birdRb.AddForce(-transform.up * Time.deltaTime);
+            Down();
         }
     }
 
     private void Fly()
     {
+        GetComponent<Animator>().SetTrigger("Fly");
+        birdRb.AddForce(transform.up * flyPower, ForceMode2D.Impulse);
     }
     private void Down()
     {
+        birdRb.AddForce(-transform.up * 500 * Time.deltaTime, ForceMode2D.Force);
     }
 
 
@@ -49,6 +53,7 @@ public class Bird : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        isDead = true;
     }
 }
