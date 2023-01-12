@@ -18,7 +18,7 @@ public class ObstacleGenerator : MonoBehaviour
     float spawnTime = 2;
     float time = 0;
     int obstacleCount = 0;
-    public bool isPaused = false;
+    public bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +111,7 @@ public class ObstacleGenerator : MonoBehaviour
 
     public void OnStartButtonClick()
     {
+        isPaused = false;
         GetComponent<AudioSource>().Play();
         startScreen.SetActive(false);
         scoreText.SetActive(true);

@@ -1172,7 +1172,7 @@ MonoBehaviour:
   bird: {fileID: 1624500392}
   scoreText: {fileID: 1849500711}
   difficulty: 1
-  isPaused: 0
+  isPaused: 1
 --- !u!82 &1429862348
 AudioSource:
   m_ObjectHideFlags: 0
