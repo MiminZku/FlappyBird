@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2211027625806009593}
   - component: {fileID: 8618115552941059166}
+  - component: {fileID: 5924359101584923162}
   m_Layer: 0
   m_Name: Wall2
   m_TagString: Obstacle
@@ -46,6 +47,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f12cf8ef41462b41b51d98b48ac73e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallSpeed: 5
+  og: {fileID: 0}
+--- !u!95 &5924359101584923162
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557895428583851121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b63ec45e8b899014f83506f2a63394d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6241730165385637160
 PrefabInstance:
   m_ObjectHideFlags: 0
