@@ -21,7 +21,7 @@ public class Bird : MonoBehaviour
     void Update()
     {
         transform.eulerAngles = new Vector3(0.0f, 0.0f, birdRb.velocity.y*3f);
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !og.isPaused)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !og.isPaused)
         {
             Fly();
         }
